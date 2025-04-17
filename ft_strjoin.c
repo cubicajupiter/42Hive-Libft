@@ -1,31 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jvalkama <jvalkama@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/15 15:19:46 by jvalkama          #+#    #+#             */
-/*   Updated: 2025/04/17 09:52:41 by jvalkama         ###   ########.fr       */
+/*   Created: 2025/04/17 12:51:23 by jvalkama          #+#    #+#             */
+/*   Updated: 2025/04/17 13:18:09 by jvalkama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-void	*ft_memcpy(void *dest, const void *src, size_t n)
+char *ft_strjoin(char const *s1, char const *s2);
 {
-	while (i < n)
+	char	*newstr;
+
+	newstr = malloc(ft_strlen(s1) + ft_strlen(s2) + 1);
+	if (!newstr)
+		return (NULL);
+	while (*s1)
 	{
-		dest[i] = src[i];
-		i++;
+		*(newstr)++ = *(s1)++;
 	}
-	return (dest);
+	while (*s2)	
+	{
+		*(newstr)++ = *(s2)++;
+	}
+	*newstr = '\0';
+	return (newstr); //defaults to first value of array?
 }
-
-/*DESCRIPTION
-       The  memcpy()  function copies n bytes from memory area src to memory area dest.  The memory areas must not overlap.  Use memmove(3) if
-       the memory areas do overlap.
-
-RETURN VALUE
-       The memcpy() function returns a pointer to dest.
-*/

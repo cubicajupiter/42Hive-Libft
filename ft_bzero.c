@@ -6,11 +6,13 @@
 /*   By: jvalkama <jvalkama@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/15 15:12:05 by jvalkama          #+#    #+#             */
-/*   Updated: 2025/04/15 15:18:32 by jvalkama         ###   ########.fr       */
+/*   Updated: 2025/04/17 09:56:59 by jvalkama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	bzero(void *s, size_t n)
+#include "libft.h"
+
+void	ft_bzero(void *s, size_t n)
 {
 	while (i < n)
 		s[i] = '\0'; //will this actually access the memslot and replace it?	

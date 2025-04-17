@@ -6,11 +6,13 @@
 /*   By: jvalkama <jvalkama@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/15 14:48:14 by jvalkama          #+#    #+#             */
-/*   Updated: 2025/04/15 14:55:18 by jvalkama         ###   ########.fr       */
+/*   Updated: 2025/04/17 12:32:41 by jvalkama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-size_t	(const char *str)
+#include "libft.h"
+
+size_t	ft_strlen(const char *str)
 {
 	size_t	s;
 

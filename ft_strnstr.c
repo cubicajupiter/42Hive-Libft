@@ -6,11 +6,13 @@
 /*   By: jvalkama <jvalkama@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/15 15:34:23 by jvalkama          #+#    #+#             */
-/*   Updated: 2025/04/15 15:51:36 by jvalkama         ###   ########.fr       */
+/*   Updated: 2025/04/17 10:06:25 by jvalkama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*strnstr(const char *big, const char *little, size_t len)
+#include "libft.h"
+
+char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
 	int		i;
 	int		j;

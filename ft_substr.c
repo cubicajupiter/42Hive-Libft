@@ -1,31 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jvalkama <jvalkama@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/15 15:19:46 by jvalkama          #+#    #+#             */
-/*   Updated: 2025/04/17 09:52:41 by jvalkama         ###   ########.fr       */
+/*   Created: 2025/04/17 12:48:41 by jvalkama          #+#    #+#             */
+/*   Updated: 2025/04/17 13:11:34 by jvalkama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-void	*ft_memcpy(void *dest, const void *src, size_t n)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	while (i < n)
+	char	*substr;
+
+	substr = malloc(len + 1);
+	if (!substr)
 	{
-		dest[i] = src[i];
-		i++;
+		return (NULL);
 	}
-	return (dest);
+	while (s[start])
+	{
+		*(substr)++ = s[start];
+		start++;
+	}
+	return (substr); //points to first value?
 }
-
-/*DESCRIPTION
-       The  memcpy()  function copies n bytes from memory area src to memory area dest.  The memory areas must not overlap.  Use memmove(3) if
-       the memory areas do overlap.
-
-RETURN VALUE
-       The memcpy() function returns a pointer to dest.
-*/

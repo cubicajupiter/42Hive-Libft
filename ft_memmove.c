@@ -6,13 +6,30 @@
 /*   By: jvalkama <jvalkama@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/15 15:21:44 by jvalkama          #+#    #+#             */
-/*   Updated: 2025/04/15 15:23:08 by jvalkama         ###   ########.fr       */
+/*   Updated: 2025/04/17 09:52:56 by jvalkama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	*memmove(void *dest, const void *src, size_t n)
-{
+#include "libft.h"
 
+void	*ft_memmove(void *dest, const void *src, size_t n)
+{
+	void	temp[n];
+	int		i;
+
+	i = 0;
+	while (i < n)
+	{
+		temp[i] = src[i];
+		i++;
+	}
+	i = 0;
+	while (i < n)
+	{
+		dest[i] = temp[i];
+		i++;
+	}
+	return (dest);
 }
 
 /* DESCRIPTION

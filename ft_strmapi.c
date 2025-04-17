@@ -1,16 +1,14 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tolower.c                                       :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jvalkama <jvalkama@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/16 08:11:20 by jvalkama          #+#    #+#             */
-/*   Updated: 2025/04/16 08:17:48 by jvalkama         ###   ########.fr       */
+/*   Created: 2025/04/17 12:53:15 by jvalkama          #+#    #+#             */
+/*   Updated: 2025/04/17 12:53:20 by jvalkama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_tolower(int c)
-{
-	return (c += 32);
-}
+char *ft_strmapi(char const *s, char (*f)(unsigned int, char));
+

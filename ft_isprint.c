@@ -6,11 +6,11 @@
 /*   By: jvalkama <jvalkama@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/15 11:41:19 by jvalkama          #+#    #+#             */
-/*   Updated: 2025/04/15 14:39:45 by jvalkama         ###   ########.fr       */
+/*   Updated: 2025/04/17 09:47:02 by jvalkama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isprint.c
+int	ft_isprint(int c)
 {
 	return (c >= 32 && c <= 127);
 }

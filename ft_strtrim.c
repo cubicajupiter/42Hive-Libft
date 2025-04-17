@@ -1,31 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jvalkama <jvalkama@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/15 15:19:46 by jvalkama          #+#    #+#             */
-/*   Updated: 2025/04/17 09:52:41 by jvalkama         ###   ########.fr       */
+/*   Created: 2025/04/17 12:51:39 by jvalkama          #+#    #+#             */
+/*   Updated: 2025/04/17 13:47:35 by jvalkama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-void	*ft_memcpy(void *dest, const void *src, size_t n)
+char *ft_strtrim(char const *s1, char const *set);
 {
-	while (i < n)
+	char	*trim_cpy;
+	size_t	len
+	int		i;
+
+	len = ft_strlen(s1);
+	trim_cpy = malloc(len);
+	if (!trim_cpy)
+		return (NULL);
+	while (s1[i] != '\0')
 	{
-		dest[i] = src[i];
-		i++;
+		// where does the end end, where does the beginning end? the chars in the set are removed in their set order or in any order?
 	}
-	return (dest);
 }
-
-/*DESCRIPTION
-       The  memcpy()  function copies n bytes from memory area src to memory area dest.  The memory areas must not overlap.  Use memmove(3) if
-       the memory areas do overlap.
-
-RETURN VALUE
-       The memcpy() function returns a pointer to dest.
-*/

@@ -6,11 +6,13 @@
 /*   By: jvalkama <jvalkama@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/15 14:57:17 by jvalkama          #+#    #+#             */
-/*   Updated: 2025/04/15 15:10:58 by jvalkama         ###   ########.fr       */
+/*   Updated: 2025/04/17 09:53:12 by jvalkama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	*memset(void *str, int c, size_t  n)
+#include "libft.h"
+
+void	*ft_memset(void *str, int c, size_t n)
 {
 	int	i;
 
