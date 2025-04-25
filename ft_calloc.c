@@ -6,7 +6,7 @@
 /*   By: jvalkama <jvalkama@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/17 12:04:55 by jvalkama          #+#    #+#             */
-/*   Updated: 2025/04/17 12:48:28 by jvalkama         ###   ########.fr       */
+/*   Updated: 2025/04/24 15:43:56 by jvalkama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,16 @@
 void	*ft_calloc(size_t nmemb, size_t size)
 {
 	void	*space;
-	unsigned long	total;
+	size_t	total;
 
 	total = nmemb * size;
-	if (total > INT_MAX)
-		return (ERROR_INT_OVERFLOW);
-	space = malloc((size_t) total);
-	if (!space)
+	if (total > INT_MAX || total < 0)
+		space = NULL;
+	else
 	{
-		return (NULL)
+		space = (void *) malloc(total);
+		if (!space)
+			space = NULL;
 	}
 	return (space);
 }
@@ -36,4 +37,11 @@ The calloc() function allocates memory for an array of nmemb elements of size by
        block of memory would be allocated:
 
            malloc(nmemb * size);
+
+#include <assert.h>
+
+int	main(void)
+{
+
+}
 */

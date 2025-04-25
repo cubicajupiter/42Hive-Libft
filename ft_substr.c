@@ -6,9 +6,11 @@
 /*   By: jvalkama <jvalkama@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/17 12:48:41 by jvalkama          #+#    #+#             */
-/*   Updated: 2025/04/17 13:11:34 by jvalkama         ###   ########.fr       */
+/*   Updated: 2025/04/25 10:29:55 by jvalkama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
@@ -26,3 +28,10 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	}
 	return (substr); //points to first value?
 }
+/*
+#include <assert.h>
+int	main(void)
+{
+
+}
+*/

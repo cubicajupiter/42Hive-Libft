@@ -6,7 +6,7 @@
 /*   By: jvalkama <jvalkama@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/17 10:18:56 by jvalkama          #+#    #+#             */
-/*   Updated: 2025/04/17 12:06:19 by jvalkama         ###   ########.fr       */
+/*   Updated: 2025/04/25 14:31:33 by jvalkama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,31 @@
 
 char    *ft_strdup(const char *s)
 {
-	size_t	len;
-	char	*copy;
+	size_t		len;
+	size_t		i;
+	char		*copy;
 
+	i = 0;
 	len = ft_strlen(s);
-	copy = malloc(len + 1);
+	copy = (char *) malloc(len + 1);
 	if (!copy)
 	return (NULL);
 	while (*s != '\0')
 	{
-		(*copy)++ = (*src)++;
+		copy[i] = *(s)++;
+		i++;
 	}
-	*copy = '\0';
-	return (copy); //pointer at end of array here?
+	copy[i] = '\0';
+	return (copy);
+}
+
+
+#include <assert.h>
+#include <stdio.h>
+int	main(void)
+{
+	char	*cpy = ft_strdup("ok");
+	printf("%s", ft_strdup("ok"));
+	free(cpy);
 }
 

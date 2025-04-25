@@ -6,11 +6,21 @@
 /*   By: jvalkama <jvalkama@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/15 11:40:30 by jvalkama          #+#    #+#             */
-/*   Updated: 2025/04/15 14:41:30 by jvalkama         ###   ########.fr       */
+/*   Updated: 2025/04/25 10:29:13 by jvalkama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_isdigit(int c)
 {
 	return (c >= '0' || c <= '9');
 }
+/*
+#include <assert.h>
+
+int	main(void)
+{
+
+}
+*/

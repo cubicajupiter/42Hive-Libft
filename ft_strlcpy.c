@@ -6,7 +6,7 @@
 /*   By: jvalkama <jvalkama@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/15 15:23:44 by jvalkama          #+#    #+#             */
-/*   Updated: 2025/04/17 09:56:16 by jvalkama         ###   ########.fr       */
+/*   Updated: 2025/04/25 10:27:32 by jvalkama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,17 @@
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
-	size_t		i;
+	size_t	srclen;
 
-	i = 0;
-	while (src[i`] != '\0' && i < size)
+	srclen = ft_strlen(src);
+	while (*src && size > 1)
 	{
-		dst[i] = src[i];
-		i++;
+		*(dst)++ = *(src)++;
+		size--;
 	}
-	dst[i] = '\0';
-	return (i);
+	if (size == 1)
+		*dst = '\0';
+	return (srclen);
 }
 
 /*
@@ -32,4 +33,15 @@ The strlcpy() and strlcat() functions return the total length of the string they
 take the full size of the buffer (not just the length) and guarantee to NUL-terminate the result (as long as size is larger than 0
 Note that a byte for the NUL should be included in size.
 src must be NUL-terminated
+
+#include <assert.h>
+#include <string.h>
+int	main(void)
+{
+        char dst[1];
+        const char *src = "hello";
+        size_t result = ft_strlcpy(dst, src, sizeof(dst));
+        assert(result == 5); // Length of the source string
+        assert(strcmp(dst, "") == 0); // Destination should be an empty string (null-terminated)
+}
 */

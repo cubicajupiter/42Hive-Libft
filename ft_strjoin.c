@@ -6,11 +6,13 @@
 /*   By: jvalkama <jvalkama@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/17 12:51:23 by jvalkama          #+#    #+#             */
-/*   Updated: 2025/04/17 13:18:09 by jvalkama         ###   ########.fr       */
+/*   Updated: 2025/04/25 10:12:01 by jvalkama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char *ft_strjoin(char const *s1, char const *s2);
+#include "libft.h"
+
+char *ft_strjoin(char const *s1, char const *s2)
 {
 	char	*newstr;
 
@@ -28,3 +30,10 @@ char *ft_strjoin(char const *s1, char const *s2);
 	*newstr = '\0';
 	return (newstr); //defaults to first value of array?
 }
+/*
+#include <assert.h>
+int	main(void)
+{
+
+}
+*/

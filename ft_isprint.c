@@ -6,11 +6,22 @@
 /*   By: jvalkama <jvalkama@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/15 11:41:19 by jvalkama          #+#    #+#             */
-/*   Updated: 2025/04/17 09:47:02 by jvalkama         ###   ########.fr       */
+/*   Updated: 2025/04/25 10:30:15 by jvalkama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_isprint(int c)
 {
 	return (c >= 32 && c <= 127);
 }
+
+/*
+#include <assert.h>
+
+int	main(void)
+{
+
+}
+*/

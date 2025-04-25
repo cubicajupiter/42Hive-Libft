@@ -6,26 +6,28 @@
 /*   By: jvalkama <jvalkama@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/17 12:53:03 by jvalkama          #+#    #+#             */
-/*   Updated: 2025/04/17 16:24:58 by jvalkama         ###   ########.fr       */
+/*   Updated: 2025/04/25 10:25:11 by jvalkama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	powers_of_ten(int n, int power)
+#include "libft.h"
+
+static int	powers_of_ten(int n, int power)
 {
 	int		count;
 
 	count = 1;
 	if (n % power > 0)
-		count += powers_of_ten(n, power * 10)
+		count += powers_of_ten(n, power * 10);
 	return (count);
 }
 
-void	ascifier(char *dst, int n, int len)
+static void	ascifier(char *dst, int n, int len)
 {
 	char	digit;
 	int		i;
 
-	i = 1
+	i = 1;
 	while (n > 0)
 	{
 		digit = (n % 10) + '0';
@@ -49,7 +51,7 @@ char	*ft_itoa(int n)
 	}
 	else if (n == 0)
 	{
-		string = "0"
+		string = "0";
 		return (string);
 	}
 	else if (n < 0)
@@ -62,3 +64,10 @@ char	*ft_itoa(int n)
 	ascifier(string, n, len); //modifies the string in place
 	return (string);
 }
+/*
+#include <assert.h>
+int	main(void)
+{
+
+}
+*/

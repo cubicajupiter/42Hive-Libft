@@ -6,11 +6,20 @@
 /*   By: jvalkama <jvalkama@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/16 08:11:20 by jvalkama          #+#    #+#             */
-/*   Updated: 2025/04/16 08:17:48 by jvalkama         ###   ########.fr       */
+/*   Updated: 2025/04/25 10:30:32 by jvalkama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_tolower(int c)
 {
 	return (c += 32);
 }
+/*
+#include <assert.h>
+int	main(void)
+{
+
+}
+*/

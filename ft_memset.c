@@ -6,7 +6,7 @@
 /*   By: jvalkama <jvalkama@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/15 14:57:17 by jvalkama          #+#    #+#             */
-/*   Updated: 2025/04/17 09:53:12 by jvalkama         ###   ########.fr       */
+/*   Updated: 2025/04/25 10:25:56 by jvalkama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,28 @@
 
 void	*ft_memset(void *str, int c, size_t n)
 {
-	int	i;
+	unsigned char	*temp;
 
-	i = 0;
-	while (i < n)
+	temp = (unsigned char *) str;
+	while (n > 0)
 	{
-		str[i] = c;
-		i++;
+		*(temp++) = (unsigned char) c;
+		n--;
 	}
-	return (*str);
+	return (str);
+}
+/*
+#include <stdio.h>
+#include <string.h>
+int	main(void)
+{
+	char buf1[10]; char buf2[10];
+	printf("%d", memcmp(ft_memset(buf1, 'A', 5), memset(buf2, 'A', 5), 5));
 }
 
-//The memset() function returns a pointer to the memory area s. The memset() function fills the first n bytes of the memory area pointed to by s with the constant byte c.
+#include <assert.h>
+int	main(void)
+{
+
+}
+*/
