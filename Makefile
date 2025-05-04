@@ -6,7 +6,7 @@
 #    By: jvalkama <jvalkama@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/22 10:34:09 by jvalkama          #+#    #+#              #
-#    Updated: 2025/04/25 13:58:57 by jvalkama         ###   ########.fr        #
+#    Updated: 2025/05/04 14:51:55 by jvalkama         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,17 +30,12 @@ HEADER			= libft.h
 CC				= cc
 
 CFLAGS			= -Wall -Wextra -Werror -g
-DEBUG_FLAGS     = -g3 -O0 -fsanitize=address
-
-ifeq ($(DEBUG), 1)
-CFLAGS += $(DEBUG_FLAGS)
-endif
 
 RM				= rm -f
 
 NAME			= libft.a
 
-all:			$(NAME)
+all:			$(NAME) clean
 
 $(NAME):		$(OBJS)
 					@echo "Creating library $(NAME)"
