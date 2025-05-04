@@ -6,7 +6,7 @@
 /*   By: jvalkama <jvalkama@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/16 08:11:20 by jvalkama          #+#    #+#             */
-/*   Updated: 2025/04/25 10:30:32 by jvalkama         ###   ########.fr       */
+/*   Updated: 2025/04/28 09:26:36 by jvalkama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,7 @@
 
 int	ft_tolower(int c)
 {
-	return (c += 32);
+	if (ft_isalpha(c))
+		return (c += 32);
+	return (c);
 }
-/*
-#include <assert.h>
-int	main(void)
-{
-
-}
-*/

@@ -6,13 +6,13 @@
 /*   By: jvalkama <jvalkama@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/17 12:53:15 by jvalkama          #+#    #+#             */
-/*   Updated: 2025/04/24 15:27:50 by jvalkama         ###   ########.fr       */
+/*   Updated: 2025/05/04 11:40:42 by jvalkama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char *ft_strmapi(char const *s, char (*f)(unsigned int, char))
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
 	char				*str;
 	unsigned int		i;
@@ -21,7 +21,7 @@ char *ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	str = (char *) malloc(sizeof(char) * ft_strlen(s) + 1);
 	if (!str)
 		return (NULL);
-	if (s && f) //think this should better be before malloc
+	if (s && f)
 	{
 		while (s[i] != '\0')
 		{
@@ -32,11 +32,3 @@ char *ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	}	
 	return (str);
 }
-
-/*
-#include <assert.h>
-int	main(void)
-{
-
-}
-*/

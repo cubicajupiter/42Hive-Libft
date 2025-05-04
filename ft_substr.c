@@ -15,23 +15,22 @@
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*substr;
+	size_t	i;
 
-	substr = malloc(len + 1);
-	if (!substr)
-	{
+	i = 0;
+	if (!s)
 		return (NULL);
-	}
-	while (s[start])
+	if (start > ft_strlen(s))
+		return (ft_strdup(""));
+	if (len > ft_strlen(s + start))
+		len = ft_strlen(s + start);
+	substr = ft_calloc(len + 1, sizeof(char));
+	if (!substr)
+		return (NULL);
+	while (i < len)
 	{
-		*(substr)++ = s[start];
-		start++;
+		substr[i] = s[start + i];
+		i++;
 	}
-	return (substr); //points to first value?
+	return (substr);
 }
-/*
-#include <assert.h>
-int	main(void)
-{
-
-}
-*/

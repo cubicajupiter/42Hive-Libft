@@ -1,33 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_lstmap_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jvalkama <jvalkama@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/17 10:18:56 by jvalkama          #+#    #+#             */
-/*   Updated: 2025/05/04 11:38:06 by jvalkama         ###   ########.fr       */
+/*   Created: 2025/05/03 11:35:32 by jvalkama          #+#    #+#             */
+/*   Updated: 2025/05/04 12:56:42 by jvalkama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strdup(const char *s)
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	size_t		len;
-	size_t		i;
-	char		*copy;
+	t_list	*new_list;
+	t_list	*new_node;
 
-	i = 0;
-	len = ft_strlen(s);
-	copy = (char *) malloc(len + 1);
-	if (!copy)
+	if (lst == NULL || f == NULL || del == NULL)
 		return (NULL);
-	while (*s != '\0')
+	new_list = NULL;
+	while (lst != NULL)
 	{
-		copy[i] = *(s)++;
-		i++;
+		new_node = ft_lstnew(f(lst->content));
+		if (new_node == NULL)
+		{
+			ft_lstclear(&new_list, del);
+			return (NULL);
+		}
+		ft_lstadd_back(&new_list, new_node);
+		lst = lst->next;
 	}
-	copy[i] = '\0';
-	return (copy);
+	return (new_list);
 }

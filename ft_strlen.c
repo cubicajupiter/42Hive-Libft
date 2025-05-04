@@ -23,12 +23,3 @@ size_t	ft_strlen(const char *str)
 	}
 	return (s);
 }
-
-/*
-#include <assert.h>
-#include <stdio.h>
-int	main(void)
-{
-	printf("%zu", ft_strlen("shiiet"));
-}
-*/

@@ -6,7 +6,7 @@
 /*   By: jvalkama <jvalkama@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/17 12:53:03 by jvalkama          #+#    #+#             */
-/*   Updated: 2025/04/25 10:25:11 by jvalkama         ###   ########.fr       */
+/*   Updated: 2025/05/04 11:57:28 by jvalkama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,58 +16,66 @@ static int	powers_of_ten(int n, int power)
 {
 	int		count;
 
-	count = 1;
-	if (n % power > 0)
-		count += powers_of_ten(n, power * 10);
+	count = 0;
+	while (n > 0)
+	{
+		n /= power;
+		count++;
+	}
 	return (count);
 }
 
-static void	ascifier(char *dst, int n, int len)
+char	*ascifier(int n, int len, int sign, int int_min)
 {
 	char	digit;
+	char	*string;
 	int		i;
 
-	i = 1;
-	while (n > 0)
+	string = malloc(len + 1);
+	if (sign)
+		string[0] = '-';
+	if (n == 0)
+		string[0] = '0';
+	else
 	{
-		digit = (n % 10) + '0';
-		dst[len - i] = digit;
-		n /= 10;
-		i++;
+		i = 1;
+		while (n > 0)
+		{
+			digit = (n % 10) + '0';
+			if (int_min && i == 1)
+				digit += 1;
+			string[len - i] = digit;
+			n /= 10;
+			i++;
+		}
 	}
-	dst[len] = '\0'; //no return value, modifies elements in place
+	string[len] = '\0';
+	return (string);
 }
 
 char	*ft_itoa(int n)
 {
 	int		len;
-	char	*string;
+	int		sign;
+	int		int_min;
 
 	len = 0;
-	if (n == -2147483648)
+	sign = 0;
+	int_min = 0;
+	if (n == INT_MIN)
 	{
-		string = "-2147483648";
-		return (string);
+		int_min = 1;
+		n += 1;
 	}
-	else if (n == 0)
-	{
-		string = "0";
-		return (string);
-	}
-	else if (n < 0)
+	if (n < 0)
 	{
 		len += 1;
 		n *= -1;
+		sign = 1;
 	}
-	len += powers_of_ten(n, 1);
-	string = (char *) malloc(len + 1);
-	ascifier(string, n, len); //modifies the string in place
-	return (string);
+	if (n == 0)
+		len = 1;
+	else
+		len += powers_of_ten(n, 10);
+	return (ascifier(n, len, sign, int_min));
 }
-/*
-#include <assert.h>
-int	main(void)
-{
-
-}
-*/

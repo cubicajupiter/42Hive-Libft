@@ -33,13 +33,3 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	}
 	return (0);
 }
-
-/*
-#include <assert.h>
-#include <string.h>
-#include <stdio.h>
-int	main(void)
-{
-	assert(ft_strnstr("hello world", "world", 11) == strnstr("hello world", "world", 11));
-}
-*/

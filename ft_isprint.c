@@ -6,7 +6,7 @@
 /*   By: jvalkama <jvalkama@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/15 11:41:19 by jvalkama          #+#    #+#             */
-/*   Updated: 2025/04/25 10:30:15 by jvalkama         ###   ########.fr       */
+/*   Updated: 2025/04/28 09:21:44 by jvalkama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,5 @@
 
 int	ft_isprint(int c)
 {
-	return (c >= 32 && c <= 127);
+	return (c >= 32 && c <= 126);
 }
-
-/*
-#include <assert.h>
-
-int	main(void)
-{
-
-}
-*/

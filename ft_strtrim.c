@@ -6,35 +6,26 @@
 /*   By: jvalkama <jvalkama@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/17 12:51:39 by jvalkama          #+#    #+#             */
-/*   Updated: 2025/04/24 15:08:38 by jvalkama         ###   ########.fr       */
+/*   Updated: 2025/05/04 12:02:55 by jvalkama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char *ft_strtrim(char const *s1, char const *set)
+char	*ft_strtrim(char const *s1, char const *set)
 {
-	char	*trim_cpy;
-	size_t	len;
-	int		i;
+	size_t			len;
+	unsigned int	i;
+	unsigned int	j;
 
-	i = 0;
 	len = ft_strlen(s1);
-	trim_cpy = malloc(len);
-	if (!trim_cpy)
-		return (NULL);
-	while (s1[i] != '\0')
-	{
-		if (set)
-			return 0;
-		// where does the end end, where does the beginning end? the chars in the set are removed in their set order or in any order?
-	}
-	return 0;
+	if (len == 0)
+		return (ft_strdup(""));
+	i = 0;
+	j = len - 1;
+	while (ft_strchr(set, s1[i]) && i < len)
+		i++;
+	while (ft_strchr(set, s1[j]) && i < j)
+		j--;
+	return (ft_substr(s1, i, (j - i + 1)));
 }
-/*
-#include <assert.h>
-int	main(void)
-{
-
-}
-*/

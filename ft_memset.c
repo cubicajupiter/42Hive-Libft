@@ -24,18 +24,3 @@ void	*ft_memset(void *str, int c, size_t n)
 	}
 	return (str);
 }
-/*
-#include <stdio.h>
-#include <string.h>
-int	main(void)
-{
-	char buf1[10]; char buf2[10];
-	printf("%d", memcmp(ft_memset(buf1, 'A', 5), memset(buf2, 'A', 5), 5));
-}
-
-#include <assert.h>
-int	main(void)
-{
-
-}
-*/
